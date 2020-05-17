@@ -9,4 +9,17 @@ label    50000 non-null object
 dtypes: int64(1), object(1)
 memory usage: 781.4+ KB
 
+image.describe()
+# 
+id
+count	50000.000000
+mean	25000.500000
+std	14433.901067
+min	1.000000
+25%	12500.750000
+50%	25000.500000
+75%	37500.250000
+max	50000.000000
+
+
 
