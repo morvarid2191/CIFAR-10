@@ -16,3 +16,7 @@ import seaborn as sns
 import tensorflow as tf
 from tensorflow.python.framework import ops
 from PIL import Image
+
+cifar10_batches_dir_path='cifar-10-batches-py'
+tar_gz_filename='cifar-10.tar.gz'
+
