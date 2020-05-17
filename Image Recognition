@@ -1,2 +1,18 @@
 %matplotlib inline
 %config InlineBackend.figure_format='retina'
+from urllib.request import urlretrieve
+from os.path import isfile,isdir
+from tqdm import tqdm
+import tarfile
+import random
+from sklearn.preprocessing import LabelBinarizer
+from sklearn.preprocessing import OneHotEncoder
+import pickle
+
+import numpy as np
+import matplotlib.pyplot as plt
+import matplotlib.image as mpimg
+import seaborn as sns
+import tensorflow as tf
+from tensorflow.python.framework import ops
+from PIL import Image
