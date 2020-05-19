@@ -69,3 +69,41 @@ model.compile(loss='categorical_crossentropy',optimizer='adam',metrics=['accurac
 
 
 model.summary()
+
+#Add early stopping
+from tensorflow.keras.callbacks import EarlyStopping
+early_stop=EarlyStopping(monitor='val_loss',patience=1)
+model.fit(x_train,y_cat_train,epochs=10,validation_data=(x_test,y_cat_test),callbacks=[early_stop])
+#poch 1/10
+1563/1563 [==============================] - 48s 31ms/step - loss: 1.5337 - accuracy: 0.4447 - val_loss: 1.3967 - val_accuracy: 0.5091
+Epoch 2/10
+1563/1563 [==============================] - 60s 38ms/step - loss: 1.1720 - accuracy: 0.5842 - val_loss: 1.1024 - val_accuracy: 0.6130
+Epoch 3/10
+1563/1563 [==============================] - 57s 37ms/step - loss: 1.0146 - accuracy: 0.6429 - val_loss: 1.1022 - val_accuracy: 0.6202
+Epoch 4/10
+1563/1563 [==============================] - 55s 35ms/step - loss: 0.9048 - accuracy: 0.6831 - val_loss: 0.9876 - val_accuracy: 0.6529
+Epoch 5/10
+1563/1563 [==============================] - 63s 40ms/step - loss: 0.8149 - accuracy: 0.7161 - val_loss: 0.9713 - val_accuracy: 0.6652
+Epoch 6/10
+1563/1563 [==============================] - 63s 40ms/step - loss: 0.7463 - accuracy: 0.7392 - val_loss: 0.9507 - val_accuracy: 0.6767
+Epoch 7/10
+1563/1563 [==============================] - 67s 43ms/step - loss: 0.6847 - accuracy: 0.7615 - val_loss: 0.9491 - val_accuracy: 0.6835
+Epoch 8/10
+1563/1563 [==============================] - 71s 45ms/step - loss: 0.6241 - accuracy: 0.7816 - val_loss: 0.9638 - val_accuracy: 0.6792
+<tensorflow.python.keras.callbacks.History at 0x18319d56b48>
+
+
+
+#Evaluate the model
+metrics=pd.DataFrame(model.history.history)
+metrics
+
+#loss	accuracy	val_loss	val_accuracy
+0	1.533701	0.44466	1.396719	0.5091
+1	1.172014	0.58424	1.102398	0.6130
+2	1.014598	0.64290	1.102153	0.6202
+3	0.904814	0.68306	0.987565	0.6529
+4	0.814901	0.71608	0.971253	0.6652
+5	0.746332	0.73922	0.950709	0.6767
+6	0.684709	0.76150	0.949128	0.6835
+7	0.624137	0.78156	0.963832	0.6792
