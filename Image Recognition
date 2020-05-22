@@ -113,3 +113,10 @@ metrics.plot()
 
 metrics[['accuracy','val_accuracy']].plot()
 #<matplotlib.axes._subplots.AxesSubplot at 0x1831b503308>
+
+model.evaluate(x_test,y_cat_test)
+#313/313 [==============================] - 2s 6ms/step - loss: 0.9638 - accuracy: 0.6792
+[0.9638320207595825, 0.6791999936103821]
+
+
+
