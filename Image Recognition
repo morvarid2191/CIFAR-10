@@ -107,3 +107,9 @@ metrics
 5	0.746332	0.73922	0.950709	0.6767
 6	0.684709	0.76150	0.949128	0.6835
 7	0.624137	0.78156	0.963832	0.6792
+
+metrics.plot()
+#<matplotlib.axes._subplots.AxesSubplot at 0x22108b3f088>
+
+metrics[['accuracy','val_accuracy']].plot()
+#<matplotlib.axes._subplots.AxesSubplot at 0x1831b503308>
