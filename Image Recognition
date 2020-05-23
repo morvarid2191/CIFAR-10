@@ -140,3 +140,28 @@ weighted avg       0.68      0.68      0.68     10000
 
 
 
+confusion_matrix(y_test,predictions)
+#array([[712,  41,  43,  24,  28,  12,  12,  13,  74,  41],
+       [ 20, 811,   9,  15,   2,   5,  14,   5,  28,  91],
+       [ 63,  13, 488,  88, 104, 101,  86,  29,  17,  11],
+       [ 30,  24,  55, 448,  72, 237,  56,  41,  16,  21],
+       [ 27,   5,  60,  57, 650,  51,  46,  81,  14,   9],
+       [ 16,   9,  43, 139,  50, 643,  24,  56,   8,  12],
+       [  4,  14,  38,  53,  45,  48, 776,   8,   8,   6],
+       [ 24,   7,  21,  40,  64,  76,  11, 732,   3,  22],
+       [ 49,  61,   9,   9,  14,  14,  11,  11, 780,  42],
+       [ 27, 115,  11,  24,   5,  12,   5,  14,  35, 752]], dtype=int64)
+
+import seaborn as sns
+plt.figure(figsize=(10,6))
+sns.heatmap(confusion_matrix(y_test,predictions),annot=True)
+#<matplotlib.axes._subplots.AxesSubplot at 0x1831d147cc8>
+
+my_image=x_test[0]
+plt.imshow(my_image)
+y_test[0]
+#array([3], dtype=uint8)
+
+model.predict_classes(my_image.reshape(1,32,32,3))
+#array([3], dtype=int64)
+
